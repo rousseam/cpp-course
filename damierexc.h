@@ -1,10 +1,11 @@
 #ifndef DAMIEREXC_H
 #define DAMIEREXC_H
+#include <iostream>
 
 class DamierExc
 {
 public:
-    DamierExc(int m, int n, int value=0);
+    DamierExc(int m, int n, int value);
     DamierExc(const DamierExc &dam);
 
     DamierExc& operator=(const DamierExc &dam);
@@ -22,7 +23,7 @@ public:
     void Print();
 
 private:
-    int nb_lignes, nb_colonnes;
+    int nb_lignes, nb_colonnes, borne;
     int **damier;
 };
 

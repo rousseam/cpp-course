@@ -2,8 +2,9 @@
 
 DamierExc::DamierExc(int m, int n, int value) {
     damier = NULL;
+    borne = value;
     Redim(m, n);
-    Init(value);
+    Init(0);
 }
 
 DamierExc::DamierExc(const DamierExc &dam) {
@@ -83,11 +84,11 @@ void DamierExc::Init(int value) {
 }
 
 void DamierExc::Set(int lign, int column, int value) {
-    if (lign>=0 && lign<nb_lignes && column>=0 && column<nb_colonnes) {
-        damier[lign][column] = value;
+    if (lign<0 || lign>=nb_lignes || column<0 || column>=nb_colonnes) {
+        throw std::range_error("Acces incorrect a une case du Damier");
     }
     else
-        std::cout << "Erreur: indices en dehors de la plage adressable" << std::endl;
+        damier[lign][column] = value;
 }
 
 void DamierExc::Print() {

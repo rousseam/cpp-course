@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         damierexc.cpp \
+        exceptiondamier.cpp \
         main.cpp
 
 HEADERS += \
-    damierexc.h
+    damierexc.h \
+    exceptiondamier.h
